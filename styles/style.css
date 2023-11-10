@@ -43,7 +43,6 @@ ol {
   margin: auto;
   align-items: flex-end;
   width: 1140px;
-  height: 534px;
   gap: 30px;
 }
 
@@ -58,19 +57,19 @@ ol {
   display: flex;
   height: 298px;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: flex-start;
   position: relative;
   overflow-y: auto;
 }
 
 .content__list-item:not(:last-child) {
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .content__list-item {
   width: 100%;
   display: flex;
+  padding: 3px;
 }
 
 .content__video-card {
@@ -119,6 +118,7 @@ ol {
 }
 .result__video {
   object-fit: cover;
+  object-position: center;
   width: 711px;
   height: 386px;
 }
@@ -136,6 +136,7 @@ ol {
 }
 
 .search-form__fieldset-title {
+  padding-bottom: 5px;
   color: #fff;
   font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
@@ -157,6 +158,7 @@ ol {
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
+  height: 34px;
 }
 
 .button:focus-visible,
@@ -168,16 +170,15 @@ ol {
 .search-form__submit-button {
   margin-top: 20px;
   width: 194px;
-  height: 34px;
   gap: 10px;
 }
 
 .more-button {
-  width: 399px;
-  height: 34px;
+  width: 398px;
 }
 
 .content__video-card-title {
+  padding-bottom: 6px;
   color: #fff;
   font-family: Oswald, sans-serif;
   font-size: 30px;
@@ -190,7 +191,6 @@ ol {
 
 .content__video-card-description {
   color: #fff;
-
   font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -237,6 +237,15 @@ ol {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding: 0;
+}
+.search-form__textfield:focus-visible {
+  outline: none;
+  border-right: none;
+  border-left: none;
+}
+.search-form__textfield:active {
+  border: none;
 }
 
 .search-form__pseudo-checkbox {
@@ -245,7 +254,9 @@ ol {
   border: 1px solid #fff;
   cursor: pointer;
 }
-
+.search-form__pseudo-checkbox {
+  margin-right: 5px;
+}
 .search-form__checkbox[type="checkbox"]:checked
   + .search-form__pseudo-checkbox {
   display: flex;
@@ -258,7 +269,7 @@ ol {
 }
 
 .search-form__label:has(:focus-visible) {
-  outline-offset: 1px;
+  outline-offset: 3px;
   outline: 1px solid #fff;
 }
 
@@ -268,7 +279,15 @@ ol {
   text-decoration: underline;
 }
 
+.content__card-link_current,
 .button:active,
 .content__card-link:active {
   background-color: #545050;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
 }
