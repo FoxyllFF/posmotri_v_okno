@@ -163,7 +163,7 @@ ol {
 
 .button:focus-visible,
 .content__card-link:focus-visible {
-  outline: 1px border #fff;
+  outline: 1px solid #fff;
   outline-offset: 2px;
 }
 
@@ -249,23 +249,30 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 19px;
   width: 19px;
   border: 1px solid #fff;
   cursor: pointer;
-}
-.search-form__pseudo-checkbox {
   margin-right: 5px;
 }
+
 .search-form__checkbox[type="checkbox"]:checked
-  + .search-form__pseudo-checkbox {
-  display: flex;
-  width: 17px;
-  height: 17px;
+  + .search-form__pseudo-checkbox::before {
+  content: "";
+  width: 14px;
+  height: 14px;
   background-color: #fff;
-  border: 1px solid #fff;
-  outline: 1px solid #1b1919;
-  outline-offset: -2px;
+}
+
+.search-form__checkbox[type="checkbox"]:active
+  + .search-form__pseudo-checkbox::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
 }
 
 .search-form__label:has(:focus-visible) {
